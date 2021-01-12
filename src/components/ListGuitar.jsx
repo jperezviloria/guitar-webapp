@@ -25,7 +25,7 @@ import { ListStyle } from "../style/styled";
                 
             {
                 this.state.guitar.map(particularGuitar =>
-                    //the condition will here to show only the enable works 
+                    //the condition will here to show only  the enable works 
 
                     <div className="particular">
                         <img href="https://static.vecteezy.com/system/resources/previews/001/206/378/non_2x/cute-music-icon-guitar-png.png"/>
