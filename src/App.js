@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+
+import HeaderComponent from "./components/Header"
+import ListComponent from "./components/ListGuitar"
+import AddGuitar from "./components/AddGuitar"
+import GetId from "./components/GetGuitarById"
+
+import {AppStyle} from "./style/styled"
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router> 
+    <AppStyle className="App">
+      <HeaderComponent/>
+      <Switch>
+        <Route path="/" exact component = {ListComponent}/>
+        <Route path = "/addguitar" component = {AddGuitar}/> 
+        <Route path = "/getguitarbyid" component = {GetId}/>  
+      </Switch>     
+    </AppStyle>
+    </Router>
   );
 }
 
